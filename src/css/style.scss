@@ -1,0 +1,175 @@
+@charset "utf-8";
+@import "../../node_modules/bulma/bulma.sass";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Rubik:wght@900&display=swap");
+
+body {
+    background-color: #5de393;
+}
+.container{
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    background-image: url(".././assets/background2.png");
+    background-size: cover;
+    transition: background-color 1s;
+}
+
+.div1{
+    position: absolute;
+    width: 100vw;
+    height:100vh;
+    transition: 1s transform ease-in;
+}
+.kevinahlHeader {
+    position: absolute;
+    width: 330px;
+    height: 85px;
+    left: 50px;
+    top: 60px;
+
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 57px;
+    text-align: center;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+
+    color: #85ffc7;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.logoStick {
+    position: absolute;
+    width: 310px;
+    left: calc(50% - 190px);
+    top: 22.8%;
+    transform: translateX(-50%);
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+    animation-name: stick;
+    animation-duration: 1.1s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes stick {
+    0% {
+        transform: translate(-50%, -1000px);
+    }
+    10% {
+        transform: translate(-50%, -1000px);
+    }
+    80% {
+        transform: translate(-50%, 20px);
+    }
+    100% {
+        transform: translate(-50%, 0px);
+    }
+}
+
+.logoTopCir {
+    position: absolute;
+    width: 310px;
+    height: 430.61px;
+    left: calc(50% - 40px);
+    top: calc(22.8% - 85px);
+    transform: translateX(-50%);
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+    animation-name: topCir;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes topCir {
+    0% {
+        transform: translate(-50%, -1000px);
+    }
+    20% {
+        transform: translate(-50%, -1000px);
+    }
+    80% {
+        transform: translate(-50%, 15px);
+    }
+    100% {
+        transform: translate(-50%, 0px);
+    }
+}
+
+.logoBottomCir {
+    position: absolute;
+    width: 310px;
+    left: calc(50% - 40px);
+    top: calc(22.8% + 90px);
+    transform: translateX(-50%);
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+    animation-name: bottomCir;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes bottomCir {
+    0% {
+        transform: translate(-50%, -1000px);
+    }
+    80% {
+        transform: translate(-50%, 20px);
+    }
+    100% {
+        transform: translate(-50%, 0px);
+    }
+}
+
+.logoTri {
+    position: absolute;
+    width: 310px;
+    left: calc(50% + 120px);
+    top: 22.5%;
+
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+    transform: translateX(-50%);
+    animation-name: bottomCir;
+    animation-duration: 1.1s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes tri {
+    0% {
+        transform: translate(-50%, -1000px);
+    }
+    15%{
+        transform: translate(-50%, -1000px);
+    }
+    80% {
+        transform: translate(-50%, 15px);
+    }
+    100% {
+        transform: translate(-50%, 0px);
+    }
+}
+
+.keepGoingButton {
+    position: absolute;
+    width: 386px;
+    height: 84px;
+    top: 78%;
+    left: 50%;
+
+    background: #fce181;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 100px;
+    border: none;
+    transform: translate(-50%, -50%);
+    color: #006b74;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    transition: transform 0.5s;
+    &:hover {
+        color: #0f8a94;
+    }
+}
