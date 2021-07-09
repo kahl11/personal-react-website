@@ -2,8 +2,10 @@
 @import "../../node_modules/bulma/bulma.sass";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Rubik:wght@900&display=swap");
 
+$medium: 900px;
+
 body {
-    background-color: #5de393;
+    background-color: #fce181;
 }
 .container{
     width: 100vw;
@@ -151,9 +153,13 @@ body {
 .keepGoingButton {
     position: absolute;
     width: 386px;
-    height: 84px;
+    height: 50px;
     top: 78%;
     left: 50%;
+
+    @media screen and (min-width: $medium) {
+        top: 88%;
+    }
 
     background: #fce181;
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
@@ -167,7 +173,7 @@ body {
     font-size: 24px;
     line-height: 36px;
     letter-spacing: 0.025em;
-    text-transform: uppercase;
+    text-transform: capitalize;
     transition: transform 0.5s;
     &:hover {
         color: #0f8a94;
