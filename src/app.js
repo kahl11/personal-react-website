@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect, useReducer, Fragment, useCallback }
 import ReactDOM from "react-dom";
 import "./css/style.scss";
 import "regenerator-runtime/runtime.js";
-
+import bench from './assets/bench.jpg';
+import lightbulb from './assets/lightbulb.png';
 import {Home} from './components/home';
 
 const green = "#5de393";
@@ -12,19 +13,21 @@ function pageStateReducer(pageState, action) {
     console.log(action)
     switch (action) {
       case 'down':
-        if(pageState.page == 0) return {page: 1, divs:{div1: "-1200"}};
-        return {page: 1, divs:{div1: "-1500"}};
+        if(pageState.page == 0) return {page: 1, divs:{div1: "-1200"}, image: bench};
+        return {page: 1, divs:{div1: "-1500"}, image: bench};
       case 'up':
-        if(pageState.page == 0) return {page: 1, divs:{div1: "0"}};
-        if(pageState.page == 1) return {page: 1, divs:{div1: "0"}};
-        return {page: 1, divs:{div1: "0"}};
+        if(pageState.page == 0) return {page: 1, divs:{div1: "0"}, image: lightbulb};
+        if(pageState.page == 1) return {page: 1, divs:{div1: "0"}, image: lightbulb};
+        return {page: 1, divs:{div1: "0"}, image: lightbulb};
       default:
         throw new Error();
     }
   }
 
 export default function App() {
-    const [pageState, updatePageState] = useReducer(pageStateReducer, {page: 0, divs:{div1: "0"}});
+    const [pageState, updatePageState] = useReducer(pageStateReducer, {page: 0, divs:{div1: "0"}, image: lightbulb});
+    let img = new Image();
+      img.src = bench;
     const scrolledEventHandler = (event) => {
         if(event.deltaY > 0){
             updatePageState("down");
@@ -38,9 +41,9 @@ export default function App() {
             window.removeEventListener("wheel", scrolledEventHandler);
     }  
     }, [])
-
+    console.log(pageState.image)
     return (
-        <div className="main_container">
+        <div className="main_container" style={{backgroundImage: `url(${pageState.image})`}}>
             <Home className="div1" pageState={pageState} updatePageState={updatePageState}/>
         </div>
     );

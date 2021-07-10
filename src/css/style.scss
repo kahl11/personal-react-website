@@ -12,10 +12,8 @@ $white: '#fefefe';
     height:100vh;
     top: 0px;
     right: 0px;
-    background-size: 1952px 1099px;
-    background-position: 0px -75px;
     background-size: cover;
-    background-image: url(".././assets/lightbulb.png");
+    transition: background-image 0.2s ease-in-out;
 }
 
 .div1{
@@ -29,7 +27,7 @@ $white: '#fefefe';
     width: 778px;
     height: 560px;
     left: 300px;
-    top: 200px;
+    top: 250px;
     
     font-family: Poppins;
     font-style: normal;
@@ -39,15 +37,51 @@ $white: '#fefefe';
     @media screen and (max-width: $regular) {
         font-size: 240px;
         line-height: 240px;
+        top: 200px;
     }
     @media screen and (max-width: $medium) {
         font-size: 180px;
         line-height: 180px;
+        top: 180px;
     }
-    
     color: #FEFEFE;
-    
     text-shadow: 2px 4px 25px rgba(125, 113, 81, 0.53);
+}
 
+.navbarHolder{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.navItem{
+    font-family: Poppins;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+    padding: 0px 20px;
+}
+
+.exploreButton{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 209px;
+    height: 35.66px;
+    left: 50%;
+    bottom: 6%;
+    background: #FFFFFF;
+    border-radius: 95px;
+    border: none;
+
+    filter: drop-shadow(2px 4px 25px rgba(125, 113, 81, 0.1));
+    &:hover{
+        filter: drop-shadow(2px 4px 25px rgba(125, 113, 81, 0.4));
+        cursor: pointer;
+    }
 }
 

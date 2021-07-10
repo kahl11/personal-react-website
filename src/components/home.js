@@ -1,5 +1,5 @@
 import React, {useRef, useEffect, useState} from 'react'
-
+import {Navbar} from './navbar';
 
 export const Home = ({className, pageState, updatePageState}) =>{
 return(
@@ -7,6 +7,12 @@ return(
     transform: `translateY(${pageState.divs.div1}px)`
 }}>
     <h1 className="kevinahlHeader">Kevin Ahl</h1>
+    <Navbar/>
+    <button className="exploreButton"
+        onClick={() => {
+            updatePageState('down');
+        }}
+    >Explore</button>
 </div>);
 
 }
