@@ -2,6 +2,7 @@
 @import "../../node_modules/bulma/bulma.sass";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
 $regular: 2000px;
 $medium: 1000px;
 $white: '#fefefe';
@@ -12,16 +13,45 @@ $white: '#fefefe';
     height:100vh;
     top: 0px;
     right: 0px;
-    background-size: cover;
-    transition: background-image 0.2s ease-in-out;
+    background-color: black;
+    overflow: hidden;
+}
+.largerText{
+    font-size: 26px;
 }
 
-.div1{
+p{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 39px;
+
+    color: #FFFFFF;
+}
+.scrollDiv{
     position: absolute;
     width: 100vw;
     height:100vh;
-    transition: 1s transform ease-in;
+    background-size: cover;
+    transition: 0.6s transform linear;
 }
+.div1{
+    background-image: url('../assets/lightbulb.png');
+}
+
+.div2{
+    background-image: url('../assets/blinds.jpg');
+    background-position-y: center;
+    background-size: cover;
+}
+.div3{
+    background-image: url('../assets/sky.jpg');
+    background-position-y: center;
+    background-size: cover;
+}
+
+
 .kevinahlHeader {
     position: absolute;
     width: 778px;
@@ -49,12 +79,14 @@ $white: '#fefefe';
 }
 
 .navbarHolder{
+    position: fixed;
+    z-index: 10;
     width: 100vw;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    top: 50px;
 }
 .navItem{
     font-family: Poppins;
@@ -85,3 +117,94 @@ $white: '#fefefe';
     }
 }
 
+.aboutLightbox{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top:50%;
+    left: 50%;
+    width: 1300px;
+    background: rgba(0, 0, 0, 0.70);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    padding: 40px 66px;
+}
+
+.mainHeader{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 104.5%;
+
+    color: #FEFEFE;
+    text-shadow: 2px 4px 10px rgba(125, 113, 81, 0.2);
+}
+img{
+    max-height: 400px;
+    transform: translateY(-50%);
+    margin-top: 400px;
+}
+.headshot{
+    margin-top: 10px;
+    transform: translateY(0px);
+    max-height: unset;
+    width: 300px;
+    float: left;
+    border-radius: 10px;
+    margin: 10px 20px 0px 0px;
+}
+
+.webdesignRow{
+    display: flex;
+    flex-direction: row;
+    width:100vw;
+    height:100vh;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.webdesignCol{
+    width: 45vw;
+    margin: 20px 20px;
+    border-radius: 10px;
+    height: 900px;
+    min-width: 800px;
+    display: flex;
+    flex-direction: column;
+}
+
+.lightbox{
+    background: rgba(0, 0, 0, 0.70);
+    padding: 15px 30px;
+}
+
+.webdesignHalfCol{
+    height: 440px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+.slide-container{
+    width: 400px;
+}
+img{
+    max-height: 400px;
+    transform: translateY(-50%);
+    margin-top: 400px;
+}
+.webdevLi{
+    color:white;
+    font-size: 30px;
+    line-height: 215%;
+}
+ul{
+    list-style-type: circle;
+}
+.webdevList{
+    width:50%;
+    padding-left:100px;
+}

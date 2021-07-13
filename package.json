@@ -46,6 +46,7 @@
     "react-intersection-observer": "^8.31.0",
     "react-loader-spinner": "^4.0.0",
     "react-query": "^3.13.4",
+    "react-slideshow-image": "^3.5.0",
     "regenerator-runtime": "^0.13.7",
     "sass": "^1.32.8",
     "sass-loader": "^10.0.1",

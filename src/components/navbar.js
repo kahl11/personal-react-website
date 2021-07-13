@@ -1,13 +1,13 @@
 import React from 'react';
 
-export const Navbar = () => {
+export const Navbar = ({updatePageState}) => {
 	return(
 		<div className="navbarHolder">
-			<a href='#' className="navItem" >Home</a>
-			<a href='#' className="navItem" >About</a>
-			<a href='#' className="navItem" >Web Design</a>
-			<a href='#' className="navItem" >Projects</a>
-			<a href='#' className="navItem" >Contacts</a>
+			<a onClick={() => updatePageState("div0")} className="navItem" >Home</a>
+			<a onClick={() => updatePageState("div1")} className="navItem" >About</a>
+			<a onClick={() => updatePageState("div2")} className="navItem" >Web Design</a>
+			<a onClick={() => updatePageState("div3")} className="navItem" >Projects</a>
+			<a onClick={() => updatePageState("div4")} className="navItem" >Contacts</a>
 		</div>
 	);
 }
