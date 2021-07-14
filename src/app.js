@@ -44,6 +44,7 @@ export default function App() {
     const [pageState, updatePageState] = useReducer(pageStateReducer, {page: 0, divs:{div1: "0", div2: "100", div3: "100", div4: "100", div5: "100"}});
     var canScroll = true; //used to debounce scrolling
     const scrolledEventHandler = (event) => {
+        console.log(event)
       if(canScroll){
         if(event.deltaY > 0){
             updatePageState("down");
@@ -52,7 +53,7 @@ export default function App() {
         }
         canScroll = false;
       }
-      setTimeout(() => {canScroll = true}, 300);//300ms debounce
+      setTimeout(() => {canScroll = true}, 1000);//debounce
     }
     useEffect(() => {
         window.addEventListener("wheel", scrolledEventHandler);

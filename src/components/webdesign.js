@@ -39,15 +39,15 @@ return(
 	<p style={{marginTop:"20px"}}>
 	I have worked with a variety of web frameworks and libraries. I started my web development career making wordpress plugins in PHP as a freelancer. In the last couple years I have moved to React and React Native, as well as picking up flutter to support as many devices and customers as possible. 
 	</p>
-	<p style={{marginTop:"20px", fontSize: "30px", fontWeight:"600"}}>Experience</p>
+	<p className="webdevStrong">Experience</p>
 	
-	<p style={{marginTop:"20px"}}>Uvic Bookstore - Lead Developer:</p>
+	<p className="webdevP">Uvic Bookstore - Lead Developer:</p>
 	<p>&nbsp;&nbsp;Fullstack development in PHP with symfony.</p>
 
-	<p style={{marginTop:"20px"}}>Vistacan - Jr Software Engineer:</p>
+	<p className="webdevP">Vistacan - Jr Software Engineer:</p>
 	<p>&nbsp;&nbsp;Open source ehealth development in django and python.</p>
 
-	<p style={{marginTop:"20px"}}>Freelance:</p>
+	<p className="webdevP">Freelance:</p>
 	<p>&nbsp;&nbsp;abom.ca</p>
 	<p>&nbsp;&nbsp;motiongrey.com</p>
 	<p>&nbsp;&nbsp;surfbc.ca</p>

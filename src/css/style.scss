@@ -18,6 +18,9 @@ $white: '#fefefe';
 }
 .largerText{
     font-size: 26px;
+    @media screen and (max-width: $regular) {
+        font-size: 18px;
+    }
 }
 
 p{
@@ -26,8 +29,11 @@ p{
     font-weight: 300;
     font-size: 22px;
     line-height: 39px;
-
     color: #FFFFFF;
+    @media screen and (max-width: $regular) {
+        font-size: 12px;
+        line-height: 20px;
+    }
 }
 .scrollDiv{
     position: absolute;
@@ -65,8 +71,9 @@ p{
     font-size: 330px;
     line-height: 330px;
     @media screen and (max-width: $regular) {
-        font-size: 240px;
-        line-height: 240px;
+        left: 100px;
+        font-size: 220px;
+        line-height: 220px;
         top: 200px;
     }
     @media screen and (max-width: $medium) {
@@ -76,6 +83,20 @@ p{
     }
     color: #FEFEFE;
     text-shadow: 2px 4px 25px rgba(125, 113, 81, 0.53);
+}
+.wip{
+    position: absolute;
+    width: 778px;
+    height: 560px;
+    left: 300px;
+    top: 190px;
+    @media screen and (max-width: $regular) {
+        left: 100px;
+        top: 140px;
+    }
+    @media screen and (max-width: $medium) {
+        top: 120px;
+    }
 }
 
 .navbarHolder{
@@ -127,6 +148,10 @@ p{
     backdrop-filter: blur(4px);
     border-radius: 10px;
     padding: 40px 66px;
+    @media screen and (max-width: $regular) {
+        margin-top: 20px;
+    }
+
 }
 
 .mainHeader{
@@ -141,19 +166,23 @@ p{
 }
 img{
     max-height: 400px;
-    transform: translateY(-50%);
-    margin-top: 400px;
+    transform: translate(-50%, -50%);
+    @media screen and (max-width: $regular) {
+        height: 200px;
+        margin-top: 200px;
+        margin-left: 22.5vw;
+    }
 }
 .headshot{
     margin-top: 10px;
     transform: translateY(0px);
     max-height: unset;
+    height: auto;
     width: 300px;
     float: left;
     border-radius: 10px;
     margin: 10px 20px 0px 0px;
 }
-
 .webdesignRow{
     display: flex;
     flex-direction: row;
@@ -169,9 +198,13 @@ img{
     margin: 20px 20px;
     border-radius: 10px;
     height: 900px;
-    min-width: 800px;
+    min-width: 400px;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: $regular) {
+        height: 600px;
+        margin-top: 80px;
+    }
 }
 
 .lightbox{
@@ -186,20 +219,20 @@ img{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    
+    @media screen and (max-width: $regular) {
+        height: 280px;
+    }
 }
 .slide-container{
     width: 400px;
-}
-img{
-    max-height: 400px;
-    transform: translateY(-50%);
-    margin-top: 400px;
 }
 .webdevLi{
     color:white;
     font-size: 30px;
     line-height: 215%;
+    @media screen and (max-width: $regular) {
+        font-size: 20px;
+    }
 }
 ul{
     list-style-type: circle;
@@ -207,4 +240,21 @@ ul{
 .webdevList{
     width:50%;
     padding-left:100px;
+    @media screen and (max-width: $regular) {
+        padding-left: 20px;
+    }
+}
+.webdevP{
+    margin-top: 20px;
+    @media screen and (max-width: $regular) {
+        margin-top: 5px;
+    }
+}
+.webdevStrong{
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 30px;
+    @media screen and (max-width: $regular) {
+        font-size: 20px;
+    }
 }
