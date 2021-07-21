@@ -35,16 +35,38 @@ function pageStateReducer(pageState, action) {
         return {page: 3, divs:{div1: "-100", div2: "-100", div3: "-100", div4: "0", div5: "100"}};
       case 'div4':
         return {page: 4, divs:{div1: "-100", div2: "-100", div3: "-100", div4: "-100", div5: "0"}};
+      case 'mobile':
+        return {page: 4, divs:{div1: "0", div2: "100", div3: "230", div4: "330", div5: "430"}};
       default:
         throw new Error();
     }
   }
 
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
+
 export default function App() {
     const [pageState, updatePageState] = useReducer(pageStateReducer, {page: 0, divs:{div1: "0", div2: "100", div3: "100", div4: "100", div5: "100"}});
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+    useEffect(() => {
+      if(windowDimensions.width < 500){
+        console.log("mobile");
+        updatePageState('mobile');
+      }
+      function handleResize() {
+        setWindowDimensions(getWindowDimensions());
+      }
+  
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
     var canScroll = true; //used to debounce scrolling
     const scrolledEventHandler = (event) => {
-        console.log(event)
       if(canScroll){
         if(event.deltaY > 0){
             updatePageState("down");
@@ -56,15 +78,22 @@ export default function App() {
       setTimeout(() => {canScroll = true}, 1000);//debounce
     }
     useEffect(() => {
+      if(windowDimensions.width > 500){
         window.addEventListener("wheel", scrolledEventHandler);
+
         return () => {
             window.removeEventListener("wheel", scrolledEventHandler);
     }  
+  }
     }, [])
     return (
         <div className="main_container">
+          {windowDimensions.width > 400 ? 
            <Navbar updatePageState={updatePageState}/>
-            <Home className="div1" pageState={pageState} updatePageState={updatePageState}/>
+           :
+            null
+           }
+            <Home className="div1" pageState={pageState} updatePageState={updatePageState} width={windowDimensions.width} height={windowDimensions.height}/>
             <About className="div2" pageState={pageState} />
             <WebDesign className="div3" pageState={pageState} />
         </div>

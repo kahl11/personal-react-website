@@ -5,6 +5,7 @@
 
 $regular: 2000px;
 $medium: 1000px;
+$phone: 500px;
 $white: '#fefefe';
 
 .main_container{
@@ -15,6 +16,9 @@ $white: '#fefefe';
     right: 0px;
     background-color: black;
     overflow: hidden;
+    @media screen and (max-width: $regular) {
+        overflow: auto;
+    }
 }
 .largerText{
     font-size: 26px;
@@ -35,6 +39,12 @@ p{
         line-height: 20px;
     }
 }
+p.about{
+    @media screen and (max-width: $regular) {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+}
 .scrollDiv{
     position: absolute;
     width: 100vw;
@@ -44,6 +54,10 @@ p{
 }
 .div1{
     background-image: url('../assets/lightbulb.png');
+    @media screen and (max-width: $phone) {
+        background-position-x: center;
+        background-position-y: -100px;
+    }
 }
 
 .div2{
@@ -81,6 +95,13 @@ p{
         line-height: 180px;
         top: 180px;
     }
+    @media screen and (max-width: $phone) {
+        font-size: 120px;
+        left:auto;
+        text-align: center;
+        width: 100vw;
+        top: 100px;
+    }
     color: #FEFEFE;
     text-shadow: 2px 4px 25px rgba(125, 113, 81, 0.53);
 }
@@ -96,6 +117,13 @@ p{
     }
     @media screen and (max-width: $medium) {
         top: 120px;
+    }
+    @media screen and (max-width: $phone) {
+        top: 80px;
+        left: auto;
+        width: 100vw;
+        text-align: center;
+        padding: 0px 10px;
     }
 }
 
@@ -118,6 +146,10 @@ p{
     text-decoration-line: underline;
     color: #FFFFFF;
     padding: 0px 20px;
+    @media screen and (max-width: $phone) {
+        width:auto;
+        font-size: 14px;
+    }
 }
 
 .exploreButton{
@@ -136,6 +168,9 @@ p{
         filter: drop-shadow(2px 4px 25px rgba(125, 113, 81, 0.4));
         cursor: pointer;
     }
+    @media screen and (max-width: $phone) {
+        bottom: 100px;
+    }
 }
 
 .aboutLightbox{
@@ -151,6 +186,12 @@ p{
     @media screen and (max-width: $regular) {
         margin-top: 20px;
     }
+    @media screen and (max-width: $phone) {
+        width: 100vw;
+        margin-top: 100px;
+        padding: 10px 10px;
+        height: fit-content;
+    }
 
 }
 
@@ -163,15 +204,22 @@ p{
 
     color: #FEFEFE;
     text-shadow: 2px 4px 10px rgba(125, 113, 81, 0.2);
+    @media screen and (max-width: $phone) {
+        text-align: center;
+    }
 }
 img{
     max-height: 400px;
-    transform: translate(-50%, -50%);
+    display: block;
+    margin: auto;
     @media screen and (max-width: $regular) {
-        height: 200px;
-        margin-top: 200px;
-        margin-left: 22.5vw;
+        max-height: 200px;
     }
+}
+.image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .headshot{
     margin-top: 10px;
@@ -182,6 +230,13 @@ img{
     float: left;
     border-radius: 10px;
     margin: 10px 20px 0px 0px;
+    @media screen and (max-width: $phone) {
+        float: clear;
+        padding: 0px;
+        align-self: center;
+        width: 100%;
+        padding: 10%;
+    }
 }
 .webdesignRow{
     display: flex;
@@ -243,6 +298,9 @@ ul{
     @media screen and (max-width: $regular) {
         padding-left: 20px;
     }
+    @media screen and (max-width: $phone) {
+        padding-left: 40px;
+    }
 }
 .webdevP{
     margin-top: 20px;
@@ -256,5 +314,29 @@ ul{
     font-size: 30px;
     @media screen and (max-width: $regular) {
         font-size: 20px;
+    }
+}
+.bm-burger-button{
+    margin-top: 30px;
+    height: 50px
+}
+
+#react-burger-menu-btn{
+    height: 100px!important;
+}
+.bm-menu{
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.70);
+}
+.menu-item{
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    padding-top: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    &:hover{
+        color:rgb(59, 59, 59);
     }
 }
