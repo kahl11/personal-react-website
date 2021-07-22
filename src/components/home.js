@@ -29,12 +29,6 @@ return(
         onClick={() => {
             if(width > 500){
                 updatePageState('down');
-            }else{
-                window.scrollTo({
-                    top: 1000,
-                    left: 0,
-                    behavior: 'smooth'
-                });
             }
         }}
     >Explore</button>
